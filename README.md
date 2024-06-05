@@ -9,17 +9,17 @@ To put this series into the polynomial form, i.e. $\alpha_0 +\alpha_1x+\alpha_2x
 
 We wish to compute:
 ```math
-\sum_{n=0}^2 \frac{(-1)^n (x-6)^n}{(6)^{n+1}}$$
+\sum_{n=0}^2 \frac{(-1)^n (x-6)^n}{(6)^{n+1}}
 ```
 The function ```python array(2, 6, taylor)``` will iterate over ```python taylor(n,6)```, creating the array as follows:
 ```math
-frac{(-1)^0 (x-6)^0}{(6)^{0+1}}$$ = [\alpha_0]
+\frac{(-1)^0 (x-6)^0}{(6)^{0+1}} = [\alpha_0]
 ```
 ```math
-\frac{(-1)^1 (x-6)^1}{(6)^{1+1}}$$ = [\beta_0, \beta_1]
+\frac{(-1)^1 (x-6)^1}{(6)^{1+1}} = [\beta_0, \beta_1]
 ```
 ```math
-\frac{(-1)^2 (x-6)^2}{(6)^{2+1}}$$ = [\gamma_0, \gamma_1, \gamma_2]
+\frac{(-1)^2 (x-6)^2}{(6)^{2+1}} = [\gamma_0, \gamma_1, \gamma_2]
 ```
 Final array:
 ```math
