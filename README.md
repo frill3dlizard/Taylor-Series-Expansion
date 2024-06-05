@@ -32,5 +32,4 @@ Final array computed in ```array()``` function:
 ```math
 [\alpha_0+\beta_0+\gamma_0, \beta_1+\gamma_1, \gamma_2]
 ```
-To put this series into the polynomial form, i.e. $\alpha_0 +\alpha_1x+\alpha_2x^2+\dots$, we must at every 'n' (starting from 0) expand the $(x-6)^n$ bracket using the binomial formula, and multiply by the constants. Then store in an array these $\alpha_i$'s such that for each 'n' in the series, we can add them together to complete the sum. In mathematical writing, it would be as below:
 
