@@ -22,13 +22,13 @@ def taylor(n, c):
 
 #----------------------------------
 
-#Taylor series for ln(x) around x=6
-#NOTE: This doesn't include the ln6 constant that should be added
-def taylor_lnx(n):
+#Taylor series for ln(x) around x=c
+#NOTE: This doesn't include the ln(c) constant that should be added
+def taylor_lnx(n, centered_at):
     x = np.zeros(n+1)
     for i in range(0,n+1):
-        Binomial_expansion = math.comb(n,n-i)*(-6)**(n-i)
-        x[i] = (-1)**(n+1)*Binomial_expansion / (n*6**n)
+        Binomial_expansion = math.comb(n,n-i)*(-centered_at)**(n-i)
+        x[i] = (-1)**(n+1)*Binomial_expansion / (n*centered_at**n)
     return x
 
 #----------------------------------
@@ -72,14 +72,15 @@ asd= array(n=19, centered_at=3*np.pi/2, function=taylor_sin)
 cos = array(n=19, centered_at=3*np.pi/2, function=taylor_cos)
 
 #----------------------------------
-def array_lnx(n):
+def array_lnx(n, centered_at):
     final_array = np.zeros(n+1)
     for k in range(1,n+1):
-        coefficients = taylor_lnx(k)    #Get coefficients for nth taylor sum
+        coefficients = taylor_lnx(k, centered_at)    #Get coefficients for nth taylor sum
         #Add coefficients as you go
         final_array[:len(coefficients)] += coefficients 
     #Add the constant term    
-    final_array[0]+=np.log(6)
+    final_array[0]+=np.log(centered_at)
     return final_array
 
-array_lnx(19)
+array_lnx(19, 6)
+
