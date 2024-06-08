@@ -22,7 +22,7 @@ def taylor(n, c):
 
 #----------------------------------
 
-#Taylor series for ln(x) around x=c
+#Taylor series for ln(x) around x=c (c>0)
 #NOTE: This doesn't include the ln(c) constant that should be added
 def taylor_lnx(n, centered_at):
     x = np.zeros(n+1)
@@ -52,6 +52,16 @@ def taylor_cos(n,c):
     return x
 
 #----------------------------------
+#Taylor series for the exponential function centered at c
+#works for all real values of c
+def taylor_exponential(n, c):
+    f = np.exp(c)
+    x = np.zeros(n+1)
+    for i in range(0, n+1):
+        Binomial_expansion = math.comb(n,n-i)*(-c)**(n-i)
+        x[i] = f *Binomial_expansion  / math.factorial(n)
+    return x
+
 #Sum part of series:
 #Put coefficients into array of size n
 #Will iterate Taylor series same amount, hence same 'n'
