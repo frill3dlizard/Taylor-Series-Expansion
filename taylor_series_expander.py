@@ -21,7 +21,12 @@ def taylor(n, c):
     return x
 
 #----------------------------------
-
+def taylor_x2(n, c):
+    x = np.zeros(n+1)
+    for i in range(0,n+1):
+        Binomial_expansion = math.comb(n,n-i)*(-c)**(n-i)
+        x[i] = (-1)**(n)*(n+1)*Binomial_expansion / c**(n+2) 
+    return x
 #Taylor series for ln(x) around x=c (c>0)
 #NOTE: This doesn't include the ln(c) constant that should be added
 def taylor_lnx(n, centered_at):
@@ -80,7 +85,7 @@ def array(n, centered_at, function):
 array(n=17, centered_at=6, function=taylor)
 asd= array(n=19, centered_at=3*np.pi/2, function=taylor_sin)
 cos = array(n=19, centered_at=3*np.pi/2, function=taylor_cos)
-
+ivnerse_x2 = array(n=20, centered_at=5, function = taylor_x2)
 #----------------------------------
 def array_lnx(n, centered_at):
     final_array = np.zeros(n+1)
