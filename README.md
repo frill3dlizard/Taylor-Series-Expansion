@@ -1,7 +1,7 @@
 # Taylor-Series
 A Taylor series is an approximation for an infinitely differentiable function about a point $x=a$ by summing over the the following formula:
 ```math
-\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n = f^{(0)}(a)+\frac{f^{(1)}(a)}{1!}(x-a)+\frac{f^{(2)}(a)}{2!}(x-a)^2+\dots$$
+\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!}(x-a)^n = f^{(0)}(a)+\frac{f^{(1)}(a)}{1!}(x-a)+\frac{f^{(2)}(a)}{2!}(x-a)^2+\dots
 ```
 Although the sumation form is useful in most applicaitons, some may require the fully extended polynomial form. This is what the code aims to acheive for a few common functions, such as $\frac{1}{x}, sin(x), cos(x), ln(x)$.
 
@@ -10,7 +10,7 @@ The code allows Taylor series to be expanded into the polynomial form. Example b
 
 Given a Taylor series for $\frac{1}{x}$ centered at 6:
 ```math
-\sum_{n=0}^N \frac{(-1)^n (x-6)^n}{(6)^{n+1}}$$
+\sum_{n=0}^N \frac{(-1)^n (x-6)^n}{(6)^{n+1}}
 ```
 To put this series into the polynomial form, i.e. $\alpha_0 +\alpha_1x+\alpha_2x^2+\dots$, we must at every 'n' (starting from 0) expand the $(x-6)^n$ bracket using the binomial formula, and multiply by the constants. Then store in an array these $\alpha_i$'s such that for each 'n' in the series we have an array, which we then add together to complete the sum.
 ### Example ###
